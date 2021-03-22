@@ -1,5 +1,5 @@
 FROM python:3
 
-ADD src tests /src /tests
+ADD . .
 
-CMD ["python", "./src/calculator.py", "./tests/test_calculator.py" ]
+CMD ["python", "-m", "unittest", "discover", "-s","tests", "tests/test_data"]
